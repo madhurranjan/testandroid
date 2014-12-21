@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:gravity="start">
+
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="13"
+        android:id="@+id/personName"
+        android:capitalize="words"
+        android:contentDescription="Type your name"
+        android:layout_weight="0" />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="13"
+        android:text="enter email address"
+        android:id="@+id/emailId"
+        android:gravity="start"
+
+        android:layout_weight="0"
+        android:layout_marginLeft="@dimen/abc_action_bar_progress_bar_size" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:inputType="textPostalAddress"
+        android:ems="13"
+        android:text="enter postal address"
+        android:id="@+id/address"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0" />
+    <Button
+        android:onClick="registerDetails"
+        android:text="@string/button_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0" />
+</LinearLayout>
