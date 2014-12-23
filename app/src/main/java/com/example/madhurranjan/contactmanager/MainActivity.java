@@ -7,8 +7,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -17,12 +19,14 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.util.Random;
 import java.util.TimeZone;
 import java.util.logging.ConsoleHandler;
 
 
 public class MainActivity extends ActionBarActivity {
-
+/*
     public final static String EXTRA_MESSAGE = "com.example.madhurranjan.MESSAGE";
     public final static String NAME = "com.example.madhurranjan.NAME";
     public final static String EMAIL = "com.example.madhurranjan.EMAIL";
@@ -80,7 +84,7 @@ public class MainActivity extends ActionBarActivity {
         intent.putExtra(EMAIL,personEmail);
 
         startActivity(intent);
-    }*/
+    }
 
     public void showTime(View view) {
         RadioGroup rg = (RadioGroup) findViewById(R.id.time);
@@ -111,5 +115,52 @@ public class MainActivity extends ActionBarActivity {
         }
         Toast.makeText(this, timeValue,Toast.LENGTH_LONG).show();
         rg.clearCheck();
+    }
+
+
+}*/
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        SqliteHelper db = new SqliteHelper(this);
+
+        /**
+         * CRUD Operations
+         * */
+        // Inserting Contacts
+        Log.d("Insert: ", "Inserting ..");
+        db.addContact(new Contact("Ravi", "9100000000"));
+        db.addContact(new Contact("Srinivas", "9199999999"));
+        db.addContact(new Contact("Tommy", "9522222222"));
+        db.addContact(new Contact("Karthik", "9533333333"));
+
+        // Reading all contacts
+        Log.d("Reading: ", "Reading all contacts..");
+        List<Contact> contacts = db.getAllContacts();
+
+        for (Contact cn : contacts) {
+            String log = "Id: " + cn.getID() + " ,Name: " + cn.getName() + " ,Phone: " + cn.getPhoneNumber();
+            // Writing Contacts to log
+            Log.d("Name: ", log);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+       // datasource.open();
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+       // datasource.close();
+        super.onPause();
+    }
+
+    public void onClick(View view) {
+        Log.d("Mainactivity","hello");
     }
 }

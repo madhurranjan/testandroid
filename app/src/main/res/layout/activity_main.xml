@@ -5,35 +5,29 @@
 
     android:gravity="start">
 
-    <RadioGroup
-        android:id = "@+id/time"
+    <LinearLayout
+        android:id="@+id/group"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="IST Time"
-        android:id="@+id/timeInIST"
-        android:layout_weight="0" />
+        android:layout_height="wrap_content" >
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="EST Time"
-        android:id="@+id/timeInEST"
-        android:layout_weight="0" />
-
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GMT Time"
-        android:id="@+id/timeInGMT"
-        android:layout_weight="0" />
-    </RadioGroup>
     <Button
-        android:onClick="showTime"
-        android:text="@string/button_show"
+        android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="0" />
+        android:text="Add New"
+        android:onClick="onClick"/>
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete First"
+        android:onClick="onClick"/>
+
+    </LinearLayout>
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello" />
 </LinearLayout>

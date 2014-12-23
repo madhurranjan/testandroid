@@ -16,7 +16,7 @@ public class PersonalDetails extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        String name = intent.getStringExtra(MainActivity.NAME);
+       /* String name = intent.getStringExtra(MainActivity.NAME);
         String email = intent.getStringExtra(MainActivity.EMAIL);
         String address = intent.getStringExtra(MainActivity.ADDRESS);
         Log.d("PersonalDetails", name );
@@ -29,7 +29,7 @@ public class PersonalDetails extends ActionBarActivity {
         tv.setTextColor(Color.BLUE);
         tv.setTextSize(25);
         tv.setText("Name: " + name + " Address: " + address + " Email: " + email);
-        setContentView(tv);
+        setContentView(tv);*/
     }
 
 

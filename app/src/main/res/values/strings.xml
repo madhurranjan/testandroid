@@ -8,6 +8,8 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_display_message">My message</string>
     <string name="title_activity_personal_details">PersonalDetails</string>
+    <string name="hello">Hello world!</string>
+    <string name="title_activity_db">DbActivity</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>
